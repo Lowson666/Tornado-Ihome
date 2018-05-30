@@ -1,6 +1,7 @@
 #coding:utf-8
-from .handlers.Port import *
+from handlers import Port, VerifyCode
 
 handlers = [
-    (r'/',IndexHandler)
+    (r'/',Port.IndexHandler),
+    (r'/api/verifycode', VerifyCode.ImageCodeHandler)
 ]

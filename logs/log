@@ -1,0 +1,280 @@
+[D 180530 11:01:11 selector_events:53] Using selector: EpollSelector
+[I 180530 11:01:15 web:2106] 304 GET / (127.0.0.1) 0.92ms
+[I 180530 11:01:39 web:2106] 200 GET /? (127.0.0.1) 0.48ms
+[I 180530 17:43:12 autoreload:196] /home/sqx/桌面/Tonardo-ihome/urls.py modified; restarting server
+[D 180530 18:10:03 selector_events:53] Using selector: EpollSelector
+[E 180530 18:10:23 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 19, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:10:23 web:2106] 500 GET /api/verifycode (127.0.0.1) 3.93ms
+[E 180530 18:10:39 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 19, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:10:39 web:2106] 500 GET /api/verifycode (127.0.0.1) 1.53ms
+[I 180530 18:11:37 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:11:37 selector_events:53] Using selector: EpollSelector
+[I 180530 18:12:36 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:12:36 selector_events:53] Using selector: EpollSelector
+[E 180530 18:12:41 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 20, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:12:41 web:2106] 500 GET /api/verifycode (127.0.0.1) 4.77ms
+[I 180530 18:14:11 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:14:11 selector_events:53] Using selector: EpollSelector
+[E 180530 18:14:24 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 20, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:14:24 web:2106] 500 GET /api/verifycode (127.0.0.1) 5.01ms
+[I 180530 18:17:55 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:17:56 selector_events:53] Using selector: EpollSelector
+[E 180530 18:18:10 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 22, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:18:10 web:2106] 500 GET /api/verifycode (127.0.0.1) 57.53ms
+[E 180530 18:18:05 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 22, in get
+        self.write(image)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:18:05 web:2106] 500 GET /api/verifycode (127.0.0.1) 10.68ms
+[I 180530 18:21:41 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:21:41 selector_events:53] Using selector: EpollSelector
+[E 180530 18:21:42 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:21:42 web:2106] 500 GET /api/verifycode (127.0.0.1) 38.37ms
+[D 180530 18:21:56 selector_events:53] Using selector: EpollSelector
+[D 180530 18:22:12 selector_events:53] Using selector: EpollSelector
+[E 180530 18:23:07 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:23:07 web:2106] 500 GET /api/verifycode (127.0.0.1) 10.34ms
+[D 180530 18:23:34 selector_events:53] Using selector: EpollSelector
+[W 180530 18:23:58 web:2106] 404 GET /api/verifycode/ (127.0.0.1) 1.62ms
+[E 180530 18:24:04 web:1621] Uncaught exception GET /api/verifycode (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:24:04 web:2106] 500 GET /api/verifycode (127.0.0.1) 38.10ms
+[I 180530 18:24:35 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:24:35 selector_events:53] Using selector: EpollSelector
+[I 180530 18:24:37 web:2106] 200 GET /api/verifycode (127.0.0.1) 32.24ms
+[I 180530 18:24:40 web:2106] 304 GET /api/verifycode (127.0.0.1) 9.88ms
+[I 180530 18:25:10 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:25:10 selector_events:53] Using selector: EpollSelector
+[I 180530 18:24:58 web:2106] 304 GET /api/verifycode (127.0.0.1) 37.44ms
+[I 180530 18:24:58 web:2106] 200 GET /favicon.ico (127.0.0.1) 19.82ms
+[I 180530 18:25:01 web:2106] 304 GET /api/verifycode (127.0.0.1) 15.22ms
+[I 180530 18:25:04 web:2106] 200 GET /api/verifycode? (127.0.0.1) 10.51ms
+[I 180530 18:25:11 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:25:12 selector_events:53] Using selector: EpollSelector
+[E 180530 18:25:13 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:25:13 web:2106] 500 GET /api/verifycode? (127.0.0.1) 26.28ms
+[E 180530 18:25:15 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:25:15 web:2106] 500 GET /api/verifycode? (127.0.0.1) 16.64ms
+[I 180530 18:26:26 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:26:26 selector_events:53] Using selector: EpollSelector
+[E 180530 18:26:27 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:26:27 web:2106] 500 GET /api/verifycode? (127.0.0.1) 51.11ms
+[E 180530 18:26:29 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:26:29 web:2106] 500 GET /api/verifycode? (127.0.0.1) 5.45ms
+[E 180530 18:26:30 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:26:30 web:2106] 500 GET /api/verifycode? (127.0.0.1) 7.01ms
+[E 180530 18:26:31 web:1621] Uncaught exception GET /api/verifycode? (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:26:31 web:2106] 500 GET /api/verifycode? (127.0.0.1) 18.68ms
+[E 180530 18:26:38 web:1621] Uncaught exception GET /api/verifycode?1 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?1', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 24, in get
+        self.write(data)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 739, in write
+        raise TypeError(message)
+    TypeError: write() only accepts bytes, unicode, and dict objects
+[E 180530 18:26:38 web:2106] 500 GET /api/verifycode?1 (127.0.0.1) 6.93ms
+[I 180530 18:45:34 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:45:35 selector_events:53] Using selector: EpollSelector
+[I 180530 18:45:41 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 26.21ms
+[I 180530 18:45:44 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 7.62ms
+[I 180530 18:45:47 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 9.26ms
+[I 180530 18:45:47 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 16.46ms
+[I 180530 18:45:48 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 10.54ms
+[I 180530 18:46:32 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:46:32 selector_events:53] Using selector: EpollSelector
+[E 180530 18:46:35 web:1621] Uncaught exception GET /api/verifycode?1 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?1', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 20, in get
+        data = image.generate(1)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 45, in generate
+        im = self.generate_image(chars)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 226, in generate_image
+        im = self.create_captcha_image(chars, color, background)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 196, in create_captcha_image
+        for c in chars:
+    TypeError: 'int' object is not iterable
+[E 180530 18:46:35 web:2106] 500 GET /api/verifycode?1 (127.0.0.1) 2.68ms
+[E 180530 18:46:37 web:1621] Uncaught exception GET /api/verifycode?1 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?1', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 20, in get
+        data = image.generate(1)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 45, in generate
+        im = self.generate_image(chars)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 226, in generate_image
+        im = self.create_captcha_image(chars, color, background)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/captcha/image.py", line 196, in create_captcha_image
+        for c in chars:
+    TypeError: 'int' object is not iterable
+[E 180530 18:46:37 web:2106] 500 GET /api/verifycode?1 (127.0.0.1) 2.38ms
+[I 180530 18:46:54 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:46:54 selector_events:53] Using selector: EpollSelector
+[I 180530 18:46:54 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 27.08ms
+[I 180530 18:47:09 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:47:10 selector_events:53] Using selector: EpollSelector
+[I 180530 18:47:10 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 25.68ms
+[I 180530 18:47:10 web:2106] 200 GET /favicon.ico (127.0.0.1) 6.99ms
+[I 180530 18:47:12 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 3.56ms
+[I 180530 18:47:12 web:2106] 200 GET /favicon.ico (127.0.0.1) 1.34ms
+[I 180530 18:48:20 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:48:21 selector_events:53] Using selector: EpollSelector
+[E 180530 18:48:21 web:1621] Uncaught exception GET /api/verifycode?1 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?1', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 21, in get
+        assert isinstance(data, BytesIO)
+    AssertionError
+[E 180530 18:48:21 web:2106] 500 GET /api/verifycode?1 (127.0.0.1) 9.16ms
+[E 180530 18:48:23 web:1621] Uncaught exception GET /api/verifycode?1 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/verifycode?1', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py", line 21, in get
+        assert isinstance(data, BytesIO)
+    AssertionError
+[E 180530 18:48:23 web:2106] 500 GET /api/verifycode?1 (127.0.0.1) 17.18ms
+[I 180530 18:48:29 autoreload:196] /home/sqx/桌面/Tonardo-ihome/handlers/VerifyCode.py modified; restarting server
+[D 180530 18:48:29 selector_events:53] Using selector: EpollSelector
+[I 180530 18:48:29 web:2106] 200 GET /api/verifycode?1 (127.0.0.1) 28.47ms
