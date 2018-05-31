@@ -1,36 +1,38 @@
-#½Ó¿ÚÀàĞÍ£º»¥ÒÚÎŞÏß´¥·¢¶ÌĞÅ½Ó¿Ú£¬Ö§³Ö·¢ËÍÑéÖ¤Âë¶ÌĞÅ¡¢¶©µ¥Í¨Öª¶ÌĞÅµÈ¡£
-#ÕË»§×¢²á£ºÇëÍ¨¹ı¸ÃµØÖ·¿ªÍ¨ÕË»§http://sms.ihuyi.com/register.html
-#×¢ÒâÊÂÏî£º
-#£¨1£©µ÷ÊÔÆÚ¼ä£¬ÇëÊ¹ÓÃÓÃÏµÍ³Ä¬ÈÏµÄ¶ÌĞÅÄÚÈİ£ºÄúµÄÑéÖ¤ÂëÊÇ£º¡¾±äÁ¿¡¿¡£Çë²»Òª°ÑÑéÖ¤ÂëĞ¹Â¶¸øÆäËûÈË¡££»
-#£¨2£©ÇëÊ¹ÓÃAPIID£¨²é¿´APIIDÇëµÇÂ¼ÓÃ»§ÖĞĞÄ->ÑéÖ¤Âë¶ÌĞÅ->²úÆ·×ÜÀÀ->APIID£©¼° APIkeyÀ´µ÷ÓÃ½Ó¿Ú£»
-#£¨3£©¸Ã´úÂë½ö¹©½ÓÈë»¥ÒÚÎŞÏß¶ÌĞÅ½Ó¿Ú²Î¿¼Ê¹ÓÃ£¬¿Í»§¿É¸ù¾İÊµ¼ÊĞèÒª×ÔĞĞ±àĞ´£»
-  
-#!/usr/local/bin/python
 #-*- coding:utf-8 -*-
-import httplib
-import urllib
+#æ¥å£ç±»å‹ï¼šäº’äº¿æ— çº¿è§¦å‘çŸ­ä¿¡æ¥å£ï¼Œæ”¯æŒå‘é€éªŒè¯ç çŸ­ä¿¡ã€è®¢å•é€šçŸ¥çŸ­ä¿¡ç­‰ã€‚
+#è´¦æˆ·æ³¨å†Œï¼šè¯·é€šè¿‡è¯¥åœ°å€å¼€é€šè´¦æˆ·http://sms.ihuyi.com/register.html
+#æ³¨æ„äº‹é¡¹ï¼š
+#ï¼ˆ1ï¼‰è°ƒè¯•æœŸé—´ï¼Œè¯·ä½¿ç”¨ç”¨ç³»ç»Ÿé»˜è®¤çš„çŸ­ä¿¡å†…å®¹ï¼šæ‚¨çš„éªŒè¯ç æ˜¯ï¼šã€å˜é‡ã€‘ã€‚è¯·ä¸è¦æŠŠéªŒè¯ç æ³„éœ²ç»™å…¶ä»–äººã€‚ï¼›
+#ï¼ˆ2ï¼‰è¯·ä½¿ç”¨APIIDï¼ˆæŸ¥çœ‹APIIDè¯·ç™»å½•ç”¨æˆ·ä¸­å¿ƒ->éªŒè¯ç çŸ­ä¿¡->äº§å“æ€»è§ˆ->APIIDï¼‰åŠ APIkeyæ¥è°ƒç”¨æ¥å£ï¼›
+#ï¼ˆ3ï¼‰è¯¥ä»£ç ä»…ä¾›æ¥å…¥äº’äº¿æ— çº¿çŸ­ä¿¡æ¥å£å‚è€ƒä½¿ç”¨ï¼Œå®¢æˆ·å¯æ ¹æ®å®é™…éœ€è¦è‡ªè¡Œç¼–å†™ï¼›
+  
+
+from httplib2 import HTTPConnectionWithTimeout
+import urllib3
 
 host  = "106.ihuyi.com"
 sms_send_uri = "/webservice/sms.php?method=Submit"
 
-#ÓÃ»§ÃûÊÇµÇÂ¼ÓÃ»§ÖĞĞÄ->ÑéÖ¤Âë¶ÌĞÅ->²úÆ·×ÜÀÀ->APIID
-account  = "ÓÃ»§Ãû" 
-#ÃÜÂë ²é¿´ÃÜÂëÇëµÇÂ¼ÓÃ»§ÖĞĞÄ->ÑéÖ¤Âë¶ÌĞÅ->²úÆ·×ÜÀÀ->APIKEY
-password = "ÃÜÂë"
+#ç”¨æˆ·åæ˜¯ç™»å½•ç”¨æˆ·ä¸­å¿ƒ->éªŒè¯ç çŸ­ä¿¡->äº§å“æ€»è§ˆ->APIID
+account  = "C09194714"
+#å¯†ç  æŸ¥çœ‹å¯†ç è¯·ç™»å½•ç”¨æˆ·ä¸­å¿ƒ->éªŒè¯ç çŸ­ä¿¡->äº§å“æ€»è§ˆ->APIKEY
+password = "ffc4850eb3d50132862052a30263222e"
 
 def send_sms(text, mobile):
-    params = urllib.urlencode({'account': account, 'password' : password, 'content': text, 'mobile':mobile,'format':'json' })
+    feild = {'account': account, 'password' : password, 'content': text, 'mobile':mobile,'format':'json' }
+    params = urllib3.encode_multipart_fozdrmdata(feild)[0]
+    print(params.decode("utf-8"))
     headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-    conn = httplib.HTTPConnection(host, port=80, timeout=30)
+    conn = HTTPConnectionWithTimeout(host, port=80, timeout=300)
     conn.request("POST", sms_send_uri, params, headers)
     response = conn.getresponse()
-    response_str = response.read()
+    response_str = response.read().decode('utf-8')
     conn.close()
     return response_str 
 
 if __name__ == '__main__':
 
-    mobile = "138xxxxxxxx"
-    text = "ÄúµÄÑéÖ¤ÂëÊÇ£º121254¡£Çë²»Òª°ÑÑéÖ¤ÂëĞ¹Â¶¸øÆäËûÈË¡£"
+    mobile = "18666569867"
+    text = "æ‚¨çš„éªŒè¯ç æ˜¯ï¼š121254ã€‚è¯·ä¸è¦æŠŠéªŒè¯ç æ³„éœ²ç»™å…¶ä»–äººã€‚"
 
     print(send_sms(text, mobile))
