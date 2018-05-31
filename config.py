@@ -7,7 +7,7 @@ settings = {
     "static_path": os.path.join(os.path.dirname(__file__),"static"),
     "tamplate_path": os.path.join(os.path.dirname(__file__),"template"),
     "cookie_secret": 'PhRtTCtjTeyMbr0jcf/S8Br61t88cE++rtktrcYDkmI=',
-    "xsrf_cookies": True,
+    "xsrf_cookies": False,
     "debug": True,
 }
 

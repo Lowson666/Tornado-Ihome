@@ -1,7 +1,11 @@
 #coding:utf-8
-from handlers import Port, VerifyCode
+import os
 
+from handlers import Port, VerifyCode
+from tornado.web import StaticFileHandler
 handlers = [
-    (r'/',Port.IndexHandler),
-    (r'/api/verifycode', VerifyCode.ImageCodeHandler)
+    #(r'/',Port.IndexHandler),
+    (r'/api/smscode',VerifyCode.SMSCodeHandler),
+    (r'/api/imagecode', VerifyCode.ImageCodeHandler),
+    (r'/(.*)', StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),"HTML"),default_filename="index.html")),
 ]
