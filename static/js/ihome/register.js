@@ -64,14 +64,14 @@ function sendSMSCode() {
     //             }, 1000, 60);
     //         }
     // }, 'json');
-    var data = {mobile:mobile, piccode:imageCode, piccode_id:imageCodeId};
+    var req_data = {mobile:mobile,image_code_text:imageCode, image_code_id:imageCodeId};
     $.ajax({
         url: "/api/smscode",
         method: "POST",
         headers: {
             "X-XSRFTOKEN": getCookie("_xsrf"),
         },
-        data: JSON.stringify(data),
+        data: JSON.stringify(req_data),
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
@@ -79,7 +79,7 @@ function sendSMSCode() {
             //     errcode
             //     errmsg
             // }
-            if ("0" == data.errcode) {
+            if ("0" == data.errno) {
                 var duration = 60;
                 var timeObj = setInterval(function () {
                     duration = duration - 1;
@@ -94,7 +94,7 @@ function sendSMSCode() {
                 $("#image-code-err span").html(data.errmsg);
                 $("#image-code-err").show();
                 $(".phonecode-a").attr("onclick", "sendSMSCode();")
-                if (data.errcode == "4002" || data.errcode == "4004") {
+                if (data.errno == "4002" || data.errno == "4004") {
                     generateImageCode();
                 }
             }

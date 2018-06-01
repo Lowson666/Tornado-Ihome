@@ -8,7 +8,7 @@
   
 
 from httplib2 import HTTPConnectionWithTimeout
-import urllib3
+from urllib import parse
 
 host  = "106.ihuyi.com"
 sms_send_uri = "/webservice/sms.php?method=Submit"
@@ -20,8 +20,7 @@ password = "ffc4850eb3d50132862052a30263222e"
 
 def send_sms(text, mobile):
     feild = {'account': account, 'password' : password, 'content': text, 'mobile':mobile,'format':'json' }
-    params = urllib3.encode_multipart_fozdrmdata(feild)[0]
-    print(params.decode("utf-8"))
+    params = parse.urlencode(feild)
     headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
     conn = HTTPConnectionWithTimeout(host, port=80, timeout=300)
     conn.request("POST", sms_send_uri, params, headers)

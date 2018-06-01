@@ -6,6 +6,6 @@ from tornado.web import StaticFileHandler
 handlers = [
     #(r'/',Port.IndexHandler),
     (r'/api/smscode',VerifyCode.SMSCodeHandler),
-    (r'/api/imagecode', VerifyCode.ImageCodeHandler),
+    (r'/api/imagecode', VerifyCode.IMGCodeHandler),
     (r'/(.*)', StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),"HTML"),default_filename="index.html")),
 ]
