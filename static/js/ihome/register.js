@@ -154,11 +154,11 @@ $(document).ready(function() {
         }
 
         // 声明一个要保存结果的变量
-        var data = {}
+        var data = {};
         // 把表单中的数据填充到data中
         $(".form-register").serializeArray().map(function(x){data[x.name]=x.value})
         // 把data变量转为josn格式字符串
-        var json_data = JSON.stringify(data)
+        var json_data = JSON.stringify(data);
         //向后端发送请求
         $.ajax({
             url: "/api/register",
@@ -170,10 +170,10 @@ $(document).ready(function() {
                 "X-XSRFTOKEN": getCookie("_xsrf"),
             },
             success: function (data) {
-                if ("0" == data.errcode) {
+                if ("0" == data.errno) {
                     location.href = "/";
                 } else if ("验证码过期" == data.errmsg || "验证码错误" == data.errmsg) {
-                    $("#phone-code-err>span").html(data.errmsg);
+                    $("#phone-code-err span").html(data.errmsg);
                     $("#phone-code-err").show();
                 }
 

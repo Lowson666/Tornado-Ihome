@@ -2,14 +2,16 @@
 
 import logging
 import random
+import re
 
 from io import BytesIO
 from captcha.image import ImageCaptcha
 from handlers.BaseHandler import BaseHandler
 from libs.response_code import RET
+from libs.sms import send_sms
 from CONTENT import *
 
-class ImageCodeHandler(BaseHandler):
+class IMGCodeHandler(BaseHandler):
     """图片验证码"""
     def get(self):
         code_id = self.get_argument('codeid')
@@ -46,25 +48,27 @@ class SMSCodeHandler(BaseHandler):
         mobile = self.json_args.get("mobile")
         image_code_id = self.json_args.get("image_code_id")
         image_code_text = self.json_args.get("image_code_text")
-        print(mobile,image_code_text,image_code_id)
 
-        #判断验证码
-        if not all((mobile,image_code_id,image_code_text)):
+
+    # 判断验证码
+        if not all([mobile,image_code_id,image_code_text]):
             return self.write(dict(errno=RET.PARAMERR,errmsg="参数错误"))
-
+        # 判断手机是否正确
+        if not re.match(r"1\d{10}",mobile):
+            return self.write(dict(errno=RET.PARAMERR, errmsg="手机号错误"))
+        # 查询redis中图片验证码内容
         try:
             real_image_code_text = self.redis.get("image_code_%s"%image_code_id).decode('utf-8')
         except Exception as e:
             return self.write(dict(errno=RET.DBERR,errmsg="查询错误"))
-
         if not real_image_code_text:
             return self.write(dict(errno=RET.NODATA,errmsg="验证码过期"))
-        print(real_image_code_text)
+        # 判断用户输入验证码是否正确
         if real_image_code_text.lower() != image_code_text.lower():
             return self.write(dict(errno=RET.DATAERR,errmsg="验证码输入错误"))
 
-        #验证码判断成功
-        #生成随机验证码
+    # 验证码判断成功
+        # 生成手机验证码
         sms_code = "%04d" % random.randint(0,9999)
         try:
             self.redis.setex("sms_code_%s" % mobile,SMS_CODE_EXCIST_TIME,sms_code)
@@ -72,7 +76,12 @@ class SMSCodeHandler(BaseHandler):
             logging.error(e)
             return self.write(dict(errno=RET.DBERR,errmsg="生成信息验证码错误"))
 
-        #发送短信
+        # 发送短信
         try:
-
+            sms_text = "您的验证码是：%s。请不要把验证码泄露给其他人。"% sms_code
+            print(sms_text)
+            result = send_sms(sms_text,mobile)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.THIRDERR, errmsg="验证码发送失败"))
         self.write(dict(errno=RET.OK, errmsg="OK"))

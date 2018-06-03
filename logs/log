@@ -723,3 +723,272 @@
 [I 180531 17:47:09 web:2106] 200 GET /api/imagecode?pcodeid=2256d6e4-4ddf-4aff-8faa-c9eb85567a75&codeid=e60fcf6e-f541-4c2c-a159-ea66801112aa (127.0.0.1) 58.47ms
 [I 180531 17:48:36 web:2106] 200 POST /api/smscode (127.0.0.1) 2.88ms
 [I 180531 18:02:08 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/VerifyCode.py modified; restarting server
+[D 180601 12:27:11 selector_events:53] Using selector: EpollSelector
+[I 180601 12:27:14 web:2106] 200 GET /api/imagecode?pcodeid=143a78eb-a0ed-45d9-8b09-2f8f052ff748&codeid=b7462b05-9b01-4657-9e2f-88589fccedfa (127.0.0.1) 492.94ms
+[I 180601 12:28:13 web:2106] 200 POST /api/smscode (127.0.0.1) 4081.30ms
+[I 180601 12:29:56 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/VerifyCode.py modified; restarting server
+[D 180601 12:29:57 selector_events:53] Using selector: EpollSelector
+[I 180601 12:30:19 web:2106] 200 POST /api/smscode (127.0.0.1) 5.13ms
+[I 180601 12:30:51 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/VerifyCode.py modified; restarting server
+[D 180601 12:30:51 selector_events:53] Using selector: EpollSelector
+[I 180601 12:31:00 web:2106] 200 POST /api/smscode (127.0.0.1) 2727.34ms
+[I 180601 12:32:05 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/libs/sms.py modified; restarting server
+[D 180601 12:32:05 selector_events:53] Using selector: EpollSelector
+[I 180601 12:32:07 web:2106] 200 POST /api/smscode (127.0.0.1) 519.74ms
+[I 180601 12:32:15 web:2106] 200 POST /api/smscode (127.0.0.1) 485.98ms
+[I 180601 12:34:01 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/VerifyCode.py modified; restarting server
+[D 180601 12:34:02 selector_events:53] Using selector: EpollSelector
+[I 180601 12:34:09 web:2106] 200 POST /api/smscode (127.0.0.1) 1758.72ms
+[I 180601 12:34:19 web:2106] 200 POST /api/smscode (127.0.0.1) 499.56ms
+[I 180601 12:57:24 web:2106] 200 GET /api/imagecode?pcodeid=b7462b05-9b01-4657-9e2f-88589fccedfa&codeid=f6d03fee-860d-4f44-8f4b-b0648da4f848 (127.0.0.1) 81.11ms
+[I 180601 12:57:50 web:2106] 200 POST /api/smscode (127.0.0.1) 2.46ms
+[I 180601 12:57:52 web:2106] 200 POST /api/smscode (127.0.0.1) 0.90ms
+[I 180601 13:01:27 web:2106] 200 POST /api/smscode (127.0.0.1) 0.90ms
+[I 180601 13:01:33 web:2106] 200 POST /api/smscode (127.0.0.1) 0.90ms
+[I 180601 13:01:43 web:2106] 200 POST /api/smscode (127.0.0.1) 1.20ms
+[I 180601 13:01:49 web:2106] 200 GET /api/imagecode?pcodeid=e60fcf6e-f541-4c2c-a159-ea66801112aa&codeid=ac2aaad2-0b89-4515-abbe-ae8bdd2d0a43 (127.0.0.1) 26.22ms
+[I 180601 13:01:49 web:2106] 200 GET /api/imagecode?pcodeid=ac2aaad2-0b89-4515-abbe-ae8bdd2d0a43&codeid=143a78eb-a0ed-45d9-8b09-2f8f052ff748 (127.0.0.1) 8.93ms
+[I 180601 13:02:08 web:2106] 200 GET /api/imagecode?pcodeid=f6d03fee-860d-4f44-8f4b-b0648da4f848&codeid=54b30af4-c58a-4200-abcb-0b12b47e00b7 (127.0.0.1) 5.67ms
+[I 180601 13:02:17 web:2106] 200 POST /api/smscode (127.0.0.1) 0.76ms
+[I 180601 13:03:55 web:2106] 304 GET /register.html (127.0.0.1) 29.34ms
+[I 180601 13:03:56 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 7.78ms
+[I 180601 13:03:56 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=bc86e938-d748-4d14-834b-149f56871a36 (127.0.0.1) 47.35ms
+[I 180601 13:04:03 web:2106] 200 GET /api/imagecode?pcodeid=bc86e938-d748-4d14-834b-149f56871a36&codeid=7dd70fba-a608-45e9-bd84-1029450e0dbd (127.0.0.1) 16.91ms
+[I 180601 13:04:06 web:2106] 200 GET /api/imagecode?pcodeid=7dd70fba-a608-45e9-bd84-1029450e0dbd&codeid=b7ef85aa-e6cc-4b94-b9e4-2131e000cc6b (127.0.0.1) 5.88ms
+[I 180601 13:04:12 web:2106] 200 POST /api/smscode (127.0.0.1) 3.06ms
+[I 180601 13:04:12 web:2106] 200 GET /api/imagecode?pcodeid=b7ef85aa-e6cc-4b94-b9e4-2131e000cc6b&codeid=ebb284e9-ae92-4fbe-87d6-313d99c154a9 (127.0.0.1) 12.56ms
+[I 180601 13:04:20 web:2106] 200 POST /api/smscode (127.0.0.1) 842.54ms
+[I 180601 13:08:20 web:2106] 200 POST /api/smscode (127.0.0.1) 1056.39ms
+[I 180601 13:08:26 web:2106] 304 GET /register.html (127.0.0.1) 18.63ms
+[I 180601 13:08:26 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 4.59ms
+[I 180601 13:08:27 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=c2fb96e5-f5f7-4430-b5c7-c5ff8d48a260 (127.0.0.1) 63.79ms
+[I 180601 13:08:27 web:2106] 200 GET /favicon.ico (127.0.0.1) 2.79ms
+[I 180601 13:08:33 web:2106] 200 GET /api/imagecode?pcodeid=c2fb96e5-f5f7-4430-b5c7-c5ff8d48a260&codeid=d178b601-78b5-467c-b0b7-bdfe966ca15d (127.0.0.1) 8.39ms
+[I 180601 13:08:35 web:2106] 200 GET /api/imagecode?pcodeid=d178b601-78b5-467c-b0b7-bdfe966ca15d&codeid=a1e574ff-a3c1-4096-856a-41f0a3f29346 (127.0.0.1) 8.77ms
+[I 180601 13:08:36 web:2106] 200 GET /api/imagecode?pcodeid=a1e574ff-a3c1-4096-856a-41f0a3f29346&codeid=1cc1a6fc-b241-4fad-89c0-5380ee585732 (127.0.0.1) 5.63ms
+[I 180601 13:08:37 web:2106] 200 GET /api/imagecode?pcodeid=1cc1a6fc-b241-4fad-89c0-5380ee585732&codeid=e7da37f4-f2e5-4ede-ac37-91479c3369fc (127.0.0.1) 7.68ms
+[I 180601 13:08:42 web:2106] 200 POST /api/smscode (127.0.0.1) 551.34ms
+[I 180601 14:05:49 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/VerifyCode.py modified; restarting server
+[D 180601 18:17:28 selector_events:53] Using selector: EpollSelector
+[I 180601 18:17:34 web:2106] 304 GET /register.html (127.0.0.1) 6.53ms
+[I 180601 18:17:48 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 3.49ms
+[I 180601 18:17:34 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=156d0c2c-8cb4-4fc5-8175-47772505094c (127.0.0.1) 93.91ms
+[I 180601 18:18:09 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/BaseHandler.py modified; restarting server
+[D 180601 18:18:10 selector_events:53] Using selector: EpollSelector
+[I 180601 18:18:17 web:2106] 304 GET /register.html (127.0.0.1) 8.00ms
+[I 180601 18:18:18 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=31473c09-304c-460c-8aa7-534384d0df5b (127.0.0.1) 40.48ms
+[I 180601 18:20:26 web:2106] 304 GET /register.html (127.0.0.1) 2.48ms
+[E 180601 18:20:26 web:1621] Uncaught exception GET /api/imagecode?pcodeid=&codeid=b5e95fec-8172-4c45-8c37-8534cbeff8b2 (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/imagecode?pcodeid=&codeid=b5e95fec-8172-4c45-8c37-8534cbeff8b2', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1520, in _execute
+        result = self.prepare()
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/BaseHandler.py", line 23, in prepare
+        self.xsrf_token
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1264, in xsrf_token
+        expires_days = 30 if self.current_user else None
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1184, in current_user
+        self._current_user = self.get_current_user()
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/BaseHandler.py", line 40, in get_current_user
+        self.seesion = Seesion(self)
+      File "/home/sqx/桌面/Tonardo-Ihome/libs/session.py", line 16, in __init__
+        self.session_id = uuid.uuid4().get_hex()
+    AttributeError: 'UUID' object has no attribute 'get_hex'
+[E 180601 18:20:26 web:2106] 500 GET /api/imagecode?pcodeid=&codeid=b5e95fec-8172-4c45-8c37-8534cbeff8b2 (127.0.0.1) 13.61ms
+[I 180601 18:20:27 web:2106] 200 GET /favicon.ico (127.0.0.1) 7.32ms
+[I 180601 18:27:00 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/libs/session.py modified; restarting server
+[D 180601 18:27:00 selector_events:53] Using selector: EpollSelector
+[I 180601 18:27:09 web:2106] 304 GET /register.html (127.0.0.1) 5.12ms
+[I 180601 18:27:10 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=261b06c3-756f-4d69-97c3-a92ef97512dc (127.0.0.1) 42.30ms
+[I 180601 18:27:10 web:2106] 200 GET /favicon.ico (127.0.0.1) 1.02ms
+[I 180601 18:31:32 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/BaseHandler.py modified; restarting server
+[D 180601 18:31:32 selector_events:53] Using selector: EpollSelector
+[I 180601 18:36:11 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/BaseHandler.py modified; restarting server
+[D 180601 18:36:12 selector_events:53] Using selector: EpollSelector
+[I 180601 18:36:20 web:2106] 304 GET /register.html (127.0.0.1) 4.61ms
+[I 180601 18:36:20 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=e72af33b-cffd-4ac8-b70e-281994b81530 (127.0.0.1) 31.51ms
+[I 180601 18:36:24 web:2106] 200 GET /api/imagecode?pcodeid=e72af33b-cffd-4ac8-b70e-281994b81530&codeid=89cf0a4f-f50a-4929-89de-bcd21b713729 (127.0.0.1) 4.76ms
+[I 180601 18:36:25 web:2106] 200 GET /api/imagecode?pcodeid=89cf0a4f-f50a-4929-89de-bcd21b713729&codeid=8edc46a8-93da-4d8b-a976-5334ffb6a6bf (127.0.0.1) 5.16ms
+[D 180603 14:40:52 selector_events:53] Using selector: EpollSelector
+[W 180603 14:41:09 web:2106] 405 GET /api/register (127.0.0.1) 1.27ms
+[I 180603 14:42:30 web:2106] 200 GET /static/js/ihome/register.js (127.0.0.1) 11.12ms
+[I 180603 14:42:30 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=0dd795f6-f69d-4312-821e-a9a3c7113d59 (127.0.0.1) 60.39ms
+[I 180603 14:42:49 web:2106] 200 GET /api/imagecode?pcodeid=0dd795f6-f69d-4312-821e-a9a3c7113d59&codeid=13065413-a0b4-4f08-8e75-435deb0ff668 (127.0.0.1) 10.21ms
+[I 180603 14:43:10 web:2106] 200 POST /api/smscode (127.0.0.1) 1.05ms
+[I 180603 14:43:10 web:2106] 200 GET /api/imagecode?pcodeid=13065413-a0b4-4f08-8e75-435deb0ff668&codeid=6e460efc-faf0-41e7-b8cf-ad0b46547de7 (127.0.0.1) 5.11ms
+[I 180603 14:43:17 web:2106] 200 POST /api/smscode (127.0.0.1) 725.86ms
+[I 180603 14:43:34 web:2106] 200 POST /api/register (127.0.0.1) 0.86ms
+[I 180603 14:46:41 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 14:46:42 selector_events:53] Using selector: EpollSelector
+[I 180603 14:46:47 web:2106] 200 POST /api/register (127.0.0.1) 1.16ms
+[I 180603 14:49:17 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:15:46 selector_events:53] Using selector: EpollSelector
+[I 180603 22:15:48 web:2106] 200 POST /api/register (127.0.0.1) 5.43ms
+[I 180603 22:15:54 web:2106] 200 GET /api/imagecode?pcodeid=6e460efc-faf0-41e7-b8cf-ad0b46547de7&codeid=6113d7ff-e370-43fd-8d4d-713b7cdff70e (127.0.0.1) 35.86ms
+[I 180603 22:15:55 web:2106] 200 GET /api/imagecode?pcodeid=6113d7ff-e370-43fd-8d4d-713b7cdff70e&codeid=62d2a83a-8644-473d-9604-0b4efcf65263 (127.0.0.1) 9.13ms
+[I 180603 22:16:07 web:2106] 200 POST /api/smscode (127.0.0.1) 723.86ms
+[I 180603 22:16:14 web:2106] 200 POST /api/register (127.0.0.1) 3.51ms
+[I 180603 22:16:30 web:2106] 200 POST /api/register (127.0.0.1) 0.91ms
+[I 180603 22:17:17 web:2106] 200 POST /api/register (127.0.0.1) 1.93ms
+[I 180603 22:17:30 web:2106] 304 GET /register.html (127.0.0.1) 7.31ms
+[I 180603 22:17:30 web:2106] 304 GET /static/js/ihome/register.js (127.0.0.1) 1.32ms
+[I 180603 22:17:31 web:2106] 200 GET /api/imagecode?pcodeid=&codeid=3b2dfe76-fd87-46ba-a92b-cc50c78bc1da (127.0.0.1) 5.17ms
+[I 180603 22:17:45 web:2106] 200 POST /api/smscode (127.0.0.1) 464.12ms
+[I 180603 22:18:04 web:2106] 200 POST /api/register (127.0.0.1) 2.24ms
+[I 180603 22:20:36 web:2106] 200 POST /api/register (127.0.0.1) 1.70ms
+[I 180603 22:21:26 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:21:27 selector_events:53] Using selector: EpollSelector
+[I 180603 22:21:28 web:2106] 200 POST /api/register (127.0.0.1) 3.30ms
+[I 180603 22:22:42 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:22:42 selector_events:53] Using selector: EpollSelector
+[E 180603 22:22:53 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 25, in post
+        password = hashlib.sha256(config.password_hash_key + password).hex
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:22:53 web:2106] 500 POST /api/register (127.0.0.1) 14.23ms
+[E 180603 22:24:45 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 25, in post
+        password = hashlib.sha256(config.password_hash_key + password).hex
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:24:45 web:2106] 500 POST /api/register (127.0.0.1) 4.00ms
+[E 180603 22:26:44 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 25, in post
+        password = hashlib.sha256(config.password_hash_key + password).hex
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:26:44 web:2106] 500 POST /api/register (127.0.0.1) 12.01ms
+[E 180603 22:29:49 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 25, in post
+        password = hashlib.sha256(config.password_hash_key + password)
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:29:49 web:2106] 500 POST /api/register (127.0.0.1) 10.89ms
+[I 180603 22:29:52 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:29:53 selector_events:53] Using selector: EpollSelector
+[E 180603 22:29:55 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 25, in post
+        password = hashlib.sha256(config.password_hash_key + password)
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:29:55 web:2106] 500 POST /api/register (127.0.0.1) 3.17ms
+[I 180603 22:30:53 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:30:53 selector_events:53] Using selector: EpollSelector
+[E 180603 22:31:01 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 26, in post
+        password = hashlib.sha256(config.password_hash_key + password)
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:31:01 web:2106] 500 POST /api/register (127.0.0.1) 3.37ms
+[I 180603 22:31:32 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:31:32 selector_events:53] Using selector: EpollSelector
+[E 180603 22:31:37 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 26, in post
+        password = hashlib.sha256(config.password_hash_key + password)
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:31:37 web:2106] 500 POST /api/register (127.0.0.1) 6.75ms
+[I 180603 22:32:00 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:32:00 selector_events:53] Using selector: EpollSelector
+[I 180603 22:32:52 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:32:53 selector_events:53] Using selector: EpollSelector
+[I 180603 22:36:52 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:36:52 selector_events:53] Using selector: EpollSelector
+[E 180603 22:47:49 web:1621] Uncaught exception POST /api/register (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/register', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 26, in post
+        password = hashlib.sha256((config.password_hash_key + password).encode("utf-8")).hexdigest()
+    TypeError: Unicode-objects must be encoded before hashing
+[E 180603 22:47:49 web:2106] 500 POST /api/register (127.0.0.1) 9.70ms
+[I 180603 22:47:52 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:47:53 selector_events:53] Using selector: EpollSelector
+[E 180603 22:48:08 Port:32] 'moblie'
+[I 180603 22:48:08 web:2106] 200 POST /api/register (127.0.0.1) 2.71ms
+[E 180603 22:48:22 Port:32] 'moblie'
+[I 180603 22:48:22 web:2106] 200 POST /api/register (127.0.0.1) 2.06ms
+[E 180603 22:48:23 Port:32] 'moblie'
+[I 180603 22:48:23 web:2106] 200 POST /api/register (127.0.0.1) 2.59ms
+[E 180603 22:48:24 Port:32] 'moblie'
+[I 180603 22:48:24 web:2106] 200 POST /api/register (127.0.0.1) 1.39ms
+[I 180603 22:49:25 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:49:26 selector_events:53] Using selector: EpollSelector
+[E 180603 22:49:29 Port:32] 'moblie'
+[I 180603 22:49:29 web:2106] 200 POST /api/register (127.0.0.1) 4.34ms
+[E 180603 22:50:36 Port:32] 'moblie'
+[I 180603 22:50:36 web:2106] 200 POST /api/register (127.0.0.1) 1.88ms
+[I 180603 22:51:08 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:51:09 selector_events:53] Using selector: EpollSelector
+[E 180603 22:51:09 Port:30] 'moblie'
+[I 180603 22:51:09 web:2106] 200 POST /api/register (127.0.0.1) 3.05ms
+[E 180603 22:51:23 Port:30] 'moblie'
+[I 180603 22:51:23 web:2106] 200 POST /api/register (127.0.0.1) 1.63ms
+[I 180603 22:54:10 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 22:54:10 selector_events:53] Using selector: EpollSelector
+[W 180603 22:55:48 web:2106] 404 GET /api/check_login (127.0.0.1) 8.58ms
+[W 180603 22:55:48 web:2106] 404 GET /api/house/index (127.0.0.1) 1.00ms
+[W 180603 22:55:48 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 5.07ms
+[I 180603 23:00:16 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/handlers/Port.py modified; restarting server
+[D 180603 23:11:10 selector_events:53] Using selector: EpollSelector
+[I 180603 23:11:15 web:2106] 304 GET / (127.0.0.1) 9.65ms
+[I 180603 23:11:15 web:2106] 200 GET /api/check_login (127.0.0.1) 0.78ms
+[W 180603 23:11:15 web:2106] 404 GET /api/house/index (127.0.0.1) 4.36ms
+[W 180603 23:11:15 web:2106] 404 GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map (127.0.0.1) 1.14ms
+[I 180603 23:11:15 web:2106] 200 GET /favicon.ico (127.0.0.1) 15.31ms
+[I 180603 23:11:22 web:2106] 200 GET /login.html (127.0.0.1) 1.05ms
+[I 180603 23:11:22 web:2106] 200 GET /static/css/ihome/login.css (127.0.0.1) 7.10ms
+[I 180603 23:11:22 web:2106] 200 GET /static/js/ihome/login.js (127.0.0.1) 2.06ms
+[W 180603 23:11:35 web:2106] 405 POST /api/login (127.0.0.1) 0.77ms
+[I 180603 23:12:27 autoreload:196] /home/sqx/桌面/Tonardo-Ihome/urls.py modified; restarting server
+[D 180603 23:12:28 selector_events:53] Using selector: EpollSelector
+[E 180603 23:12:28 web:1621] Uncaught exception POST /api/login (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/api/login', version='HTTP/1.1', remote_ip='127.0.0.1')
+    Traceback (most recent call last):
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/tornado/web.py", line 1541, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/sqx/桌面/Tonardo-Ihome/handlers/Port.py", line 52, in post
+        res = self.db.get("SELECT up_user_id,up_name,up_passwd FROM ih_user_profile WHERE up_mobile = %(mobile)s",mobile = mobile)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/torndb.py", line 148, in get
+        rows = self.query(query, *parameters, **kwparameters)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/torndb.py", line 136, in query
+        self._execute(cursor, query, parameters, kwparameters)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/torndb.py", line 234, in _execute
+        return cursor.execute(query, kwparameters or parameters)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+        self.errorhandler(self, exc, value)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+        raise errorvalue
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+        res = self._query(query)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+        rowcount = self._do_query(q)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+        db.query(q)
+      File "/home/sqx/.virtualenvs/test/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+        _mysql.connection.query(self, query)
+    _mysql_exceptions.ProgrammingError: (1146, "Table 'Ihome.ih_user_profile' doesn't exist")
+[E 180603 23:12:28 web:2106] 500 POST /api/login (127.0.0.1) 45.36ms
