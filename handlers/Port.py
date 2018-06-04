@@ -2,6 +2,7 @@
 import logging
 import hashlib
 import config
+import re
 
 from libs.response_code import RET
 from .BaseHandler import *
@@ -24,8 +25,11 @@ class RegiserHandler(BaseHandler):
         # 加密密码
         password = hashlib.sha256((config.password_hash_key + password).encode("utf-8")).hexdigest()
         # 数据库创建用户数据
+        sql = "insert into ih_user_profile(up_name, up_mobile, up_passwd) values(%(name)s, %(mobile)s, %(passwd)s);"
+
         try:
-            res = self.db.execute("INSERT INTO ih_user_profile(up_name,up_mobile,up_passwd) VALUES (%(name)s,%(moblie)s,%(passwd)s)",name = mobile, mobile = mobile, passwd = password)
+            res = self.db.execute(sql, name=mobile, mobile=mobile, passwd=password)
+
         except Exception as e:
             logging.error(e)
             return self.write(dict(errno=RET.DATAEXIST, errmsg="手机号已存在"))
@@ -49,11 +53,18 @@ class LoginHandler(BaseHandler):
 
         if not all([mobile,password]):
             return self.write(dict(errno=RET.PARAMERR, errmsg="参数错误"))
-        res = self.db.get("SELECT up_user_id,up_name,up_passwd FROM ih_user_profile WHERE up_mobile = %(mobile)s",mobile = mobile)
-        password = hashlib.sha256(config.password_hash_key + password).hex
+        if not re.match(r"^1\d{10}$", mobile):
+            return self.write(dict(errcode=RET.DATAERR, errmsg="手机号错误"))
 
-        print(res,res["up_passwd"],password)
-        if res and res["up_passwd"] == unicode(password):
+        sql = "select up_user_id,up_name,up_passwd from ih_user_profile where up_mobile=%(mobile)s"
+        res = self.db.get(sql,mobile=mobile)
+
+        if not res:
+            return self.write(dict(errno=RET.NODATA, errmsg="用户名不存在"))
+
+        password = hashlib.sha256((config.password_hash_key + password).encode("utf-8")).hexdigest()
+
+        if res and res["up_passwd"] == password:
             try:
                 self.seesion = Seesion(self)
                 self.seesion.data['user'] = res
@@ -71,6 +82,6 @@ class LoginHandler(BaseHandler):
 class CheckLoginHandler(BaseHandler):
     def get(self):
         if self.get_current_user():
-            self.write(dict(errno = 0, errmsg= "true" ,data= dict(name=self.seesion.data.get("name"))))
+            self.write(dict(errno = RET.OK, errmsg= "true" ,data= dict(name=self.get_current_user().get("name"))))
         else:
-            self.write(dict(errno=1, errmsg="false"))
+            self.write(dict(errno= "1", errmsg="false"))

@@ -10,6 +10,7 @@ handlers = [
     (r'/api/register', Port.RegiserHandler),
     (r'/api/login', Port.LoginHandler),
     (r'/api/check_login', Port.CheckLoginHandler),
+    (r'/api/house/index ', Port.CheckLoginHandler),
 
     (r'/(.*)', StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),"HTML"),default_filename="index.html")),
 ]

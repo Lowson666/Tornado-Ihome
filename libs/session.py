@@ -4,10 +4,16 @@ import redis
 import logging
 import json
 import CONTENT
+import redis
+
 
 class Seesion(object):
     """"""
     def __init__(self,request_handler):
+        # self.redis = redis.StrictRedis(
+        #     host="127.0.0.1",
+        #     port=6379
+        # )
         self.request_handler = request_handler
         self.session_id = self.request_handler.get_secure_cookie("session_id")
         if not self.session_id:
@@ -18,20 +24,23 @@ class Seesion(object):
         else:
             # 拿到了seesion_id，到redis中读取
             try:
-                data = self.redis.get("sess_%s" % self.session_id)
+                data = self.request_handler.redis.get("sess_%s" % self.session_id)
+
             except Exception as e:
                 logging.error(e)
                 self.data = {}
             if not data:
                 self.data = {}
             else:
-                self.data = json.loads(data)
+                self.data = json.loads(data.decode("utf-8"))
+
 
     # 保存session信息
     def save(self):
+
         json_data = json.dumps(self.data)
         try:
-            self.redis.setex("sess_%s" % self.session_id,CONTENT.SESSION_EXCIST_TIME,json_data)
+            self.request_handler.redis.setex("sess_%s" % self.session_id,CONTENT.SESSION_EXCIST_TIME,json_data)
         except Exception as e:
             logging.error(e)
             raise Exception("session save faild")
@@ -42,7 +51,7 @@ class Seesion(object):
     def clear(self):
         self.request_handler.clear_cookie("seesion_id")
         try:
-            self.redis.delete("sess_%s" % self.session_id)
+            self.request_handler.redis.delete("sess_%s" % self.session_id)
         except Exception as e:
             logging.error(e)
 
