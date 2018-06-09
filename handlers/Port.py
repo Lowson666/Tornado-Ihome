@@ -82,6 +82,15 @@ class LoginHandler(BaseHandler):
 class CheckLoginHandler(BaseHandler):
     def get(self):
         if self.get_current_user():
-            self.write(dict(errno = RET.OK, errmsg= "true" ,data= dict(name=self.get_current_user().get("name"))))
+            self.write({"errno":RET.OK, "errmsg":"true", "data":{"name":self.get_current_user().get("name")}})
         else:
             self.write(dict(errno= "1", errmsg="false"))
+
+
+class LogoutHandler(BaseHandler):
+    def get(self):
+        self.seesion = Seesion(self)
+        self.seesion.clear()
+        self.write({"errno": RET.OK, "errmsg": "退出成功"})
+
+
