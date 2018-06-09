@@ -1,5 +1,5 @@
 CREATE DATABASE `Ihome` DEFAULT CHARACTER SET utf8;
-
+ 
 use Ihome;
 
 CREATE TABLE ih_user_profile (
