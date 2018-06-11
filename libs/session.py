@@ -16,6 +16,12 @@ class Seesion(object):
         # )
         self.request_handler = request_handler
         self.session_id = self.request_handler.get_secure_cookie("session_id")
+        if self.session_id:
+            try:
+                self.session_id = self.session_id.decode("utf-8")
+            except  Exception as e:
+                logging.error(e)
+
         if not self.session_id:
             # 用户第一次访问
             # 生成一个session_id，全局唯一
@@ -37,7 +43,6 @@ class Seesion(object):
 
     # 保存session信息
     def save(self):
-
         json_data = json.dumps(self.data)
         try:
             self.request_handler.redis.setex("sess_%s" % self.session_id,CONTENT.SESSION_EXCIST_TIME,json_data)
