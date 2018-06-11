@@ -28,7 +28,8 @@ class RegiserHandler(BaseHandler):
         sql = "insert into ih_user_profile(up_name, up_mobile, up_passwd) values(%(name)s, %(mobile)s, %(passwd)s);"
 
         try:
-            res = self.db.execute(sql, name=mobile, mobile=mobile, passwd=password)
+            # execute返回受影响行的id
+            user_id = self.db.execute(sql, name=mobile, mobile=mobile, passwd=password)
 
         except Exception as e:
             logging.error(e)
@@ -36,7 +37,7 @@ class RegiserHandler(BaseHandler):
         # 将数据存入session
         try:
             self.seesion = Seesion(self)
-            self.seesion.data['user'] = res
+            self.seesion.data['user'] = user_id
             self.seesion.data['name'] = mobile
             self.seesion.data['mobile'] = mobile
             self.seesion.save()

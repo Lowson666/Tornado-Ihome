@@ -16,7 +16,7 @@ class ProfileHandler(BaseHandler):
     @require_logined
     def get(self):
 
-        user_id = self.get_current_user()['user']['up_user_id']
+        user_id = self.get_current_user()['user']
         # 获取名字，电话号码，头像图片链接
         try:
             ret = self.db.get("select up_name,up_mobile,up_avatar from ih_user_profile where up_user_id=%s;", user_id)
@@ -38,7 +38,7 @@ class ProfileavatarHandler(BaseHandler):
 
     @require_logined
     def post(self):
-        user_id = self.get_current_user()['user']['up_user_id']
+        user_id = self.get_current_user()['user']
         # 获取用户上传头像数据
         try:
             avatar_data = self.request.files['avatar'][0]['body']
@@ -70,7 +70,7 @@ class ProfilenameHandler(BaseHandler):
     @require_logined
     def post(self):
         name = self.json_args.get('name')
-        user_id = self.get_current_user()['user']['up_user_id']
+        user_id = self.get_current_user()['user']
         try:
             update_name = self.db.execute("update ih_user_profile set up_name = %(name)s where up_user_id=%(user_id)s;", name=name,user_id=user_id)
         except Exception as e:
@@ -99,7 +99,7 @@ class ProfileauthHandler(BaseHandler):
     @require_logined
     def post(self):
         # 获取该用户ID，上传的身份证和名字
-        user_id = self.get_current_user()['user']['up_user_id']
+        user_id = self.get_current_user()['user']
         ID = self.json_args.get('id_card')
         ID_name = self.json_args.get('real_name')
 

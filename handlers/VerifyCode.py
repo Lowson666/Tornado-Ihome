@@ -18,7 +18,7 @@ class IMGCodeHandler(BaseHandler):
         pcode_id = self.get_argument('pcodeid')
         if pcode_id:
             try:
-                self.redis.delete("")
+                self.redis.delete("image_code_%s"%pcode_id)
             except Exception as e:
                 logging.error(e)
 
@@ -68,6 +68,16 @@ class SMSCodeHandler(BaseHandler):
             return self.write(dict(errno=RET.DATAERR,errmsg="验证码输入错误"))
 
     # 验证码判断成功
+        # 手机号是否存在检查
+        sql = "select count(*) counts from ih_user_profile where up_mobile=%s"
+        try:
+            ret = self.db.get(sql, mobile)
+        except Exception as e:
+            logging.error(e)
+        else:
+            if 0 != ret["counts"]:
+                return self.write(dict(errno=RET.DATAEXIST, errmsg="手机号已注册"))
+
         # 生成手机验证码
         sms_code = "%04d" % random.randint(0,9999)
         try:
