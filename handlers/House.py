@@ -3,11 +3,13 @@ import logging
 import hashlib
 import config
 import re
+import json
 import CONTENT
 
 from libs.response_code import RET
+from libs.login_verify import require_logined
 from .BaseHandler import *
-
+from libs import qiniu_image_storage
 
 class HouseindexHandler(BaseHandler):
     """提供城区信息"""
@@ -95,3 +97,118 @@ class HouseindexHandler(BaseHandler):
             logging.error(e)
 
         self.write(dict(errno=RET.OK, errmsg="OK", data=data))
+
+class HouseareaHandler(BaseHandler):
+    @require_logined
+    def get(self):
+        try:
+            ret = self.redis.get("area_info")
+        except Exception as e:
+            logging.error(e)
+            ret = None
+
+        if ret:
+            logging.info("hit redis: area_info")
+            info = json.loads(ret.decode('utf-8'))
+            return self.write(dict(errno=RET.OK, errmsg="OK", data=info))
+        else:
+            return self.write(dict(errno=RET.SESSIONERR, errmsg="NO"))
+
+class MyhouseHandler(BaseHandler):
+    @require_logined
+    def get(self):
+
+        user_id = self.get_current_user()['user']
+
+
+class HouseinfoHandler(BaseHandler):
+    @require_logined
+    def post(self):
+        user_id = self.get_current_user()['user']
+        title = self.json_args.get("title")
+        price = self.json_args.get("price")
+        area_id = self.json_args.get("area_id")
+        address = self.json_args.get("address")
+        room_count = self.json_args.get("room_count")
+        acreage = self.json_args.get("acreage")
+        unit = self.json_args.get("unit")
+        capacity = self.json_args.get("capacity")
+        beds = self.json_args.get("beds")
+        deposit = self.json_args.get("deposit")
+        min_days = self.json_args.get("min_days")
+        max_days = self.json_args.get("max_days")
+        facility = self.json_args.get("facility")  # 对一个房屋的设施，是列表类型
+        # 校验
+
+        if not all((title, price, area_id, address, room_count, acreage, unit, capacity, beds, deposit, min_days,
+                    max_days)):
+
+            return self.write(dict(errno=RET.PARAMERR, errmsg="缺少参数"))
+
+        try:
+            price = int(price) * 100
+            deposit = int(deposit) * 100
+        except Exception as e:
+            return self.write(dict(errno=RET.PARAMERR, errmsg="参数错误"))
+
+        # 数据
+        try:
+            sql = "insert into ih_house_info(hi_user_id,hi_title,hi_price,hi_area_id,hi_address,hi_room_count," \
+                  "hi_acreage,hi_house_unit,hi_capacity,hi_beds,hi_deposit,hi_min_days,hi_max_days)" \
+                  "values(%(user_id)s,%(title)s,%(price)s,%(area_id)s,%(address)s,%(room_count)s,%(acreage)s," \
+                  "%(house_unit)s,%(capacity)s,%(beds)s,%(deposit)s,%(min_days)s,%(max_days)s)"
+            # 对于insert语句，execute方法会返回最后一个自增id
+            house_id = self.db.execute(sql, user_id=user_id, title=title, price=price, area_id=area_id,
+                                       address=address,room_count=room_count, acreage=acreage, house_unit=unit,
+                                       capacity=capacity,beds=beds, deposit=deposit, min_days=min_days, max_days=max_days)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DBERR, errmsg="save data error"))
+
+        # 将设施列表转换成json字符串保存到数据库中
+        facility_id_str = json.dumps(facility)
+
+        try:
+            sql = "insert into ih_house_facility(hf_house_id,hf_facility_id_list) values (%(house_id)s,%(facility_id)s)"
+
+            hf_id = self.db.execute(sql,house_id=house_id,facility_id =facility_id_str)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DBERR, errmsg="save data error"))
+
+
+
+
+
+
+        return self.write(dict(errno=RET.OK, errmsg="saved data",house_id=house_id))
+
+
+class HouseimageHandler(BaseHandler):
+
+    @require_logined
+    def post(self):
+        user_id = self.get_current_user()['user']
+        # 获取用户房间上传图片数据
+        house_id = self.get_argument("house_id")
+        try:
+            house_data = self.request.files['house_image'][0]['body']
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DATAERR, errmsg="房屋图片上传失败"))
+
+        # 将数据上传到云空间，取得文件名key
+        try:
+            # 将头像数据上传到七牛云
+            key = qiniu_image_storage.storage(house_data)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DATAERR, errmsg="头像上传云端失败"))
+
+        # 将头像key存入数据库
+        try:
+            update_avatar = self.db.execute("insert into ih_house_image(hi_house_id,hi_url) values(%(house_id)s, %(key)s);",house_id=house_id, key=key)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DBERR, errmsg="房屋图片更新失败"))
+        return self.write(dict(errno=RET.OK, errmsg="房屋图片保存成功", data=CONTENT.QINIU_IMAGE_LINK + '/' + key))

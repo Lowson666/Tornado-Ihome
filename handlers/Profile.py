@@ -17,12 +17,14 @@ class ProfileHandler(BaseHandler):
     def get(self):
 
         user_id = self.get_current_user()['user']
+
         # 获取名字，电话号码，头像图片链接
         try:
             ret = self.db.get("select up_name,up_mobile,up_avatar from ih_user_profile where up_user_id=%s;", user_id)
         except Exception as e:
             logging.error(e)
             return self.write({"errno": RET.DBERR, "errmsg": "get data error"})
+
         if ret["up_avatar"]:
             img_url = CONTENT.QINIU_IMAGE_LINK +'/' + ret["up_avatar"]
         else:
@@ -86,7 +88,7 @@ class ProfileauthHandler(BaseHandler):
     @require_logined
     def get(self):
         # 获取该用户ID
-        user_id = self.get_current_user()['user']['up_user_id']
+        user_id = self.get_current_user()['user']
         # 从数据库查询该用户身份信息
         try:
             ID_name = self.db.get("select up_real_name,up_id_card from ih_user_profile where up_user_id=%s;", user_id)

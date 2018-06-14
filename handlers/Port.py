@@ -68,7 +68,7 @@ class LoginHandler(BaseHandler):
         if res and res["up_passwd"] == password:
             try:
                 self.seesion = Seesion(self)
-                self.seesion.data['user'] = res
+                self.seesion.data['user'] = res['up_user_id']
                 self.seesion.data['name'] = mobile
                 self.seesion.data['mobile'] = mobile
                 self.seesion.save()
