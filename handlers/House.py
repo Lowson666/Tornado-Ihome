@@ -115,10 +115,31 @@ class HouseareaHandler(BaseHandler):
             return self.write(dict(errno=RET.SESSIONERR, errmsg="NO"))
 
 class MyhouseHandler(BaseHandler):
+    """在我的房源页面获取本人上传的房屋信息"""
     @require_logined
     def get(self):
 
         user_id = self.get_current_user()['user']
+        try:
+            sql = "select a.hi_house_id,a.hi_title,a.hi_price,a.hi_ctime,b.ai_name,a.hi_index_image_url " \
+                  "from ih_house_info a inner join ih_area_info b on a.hi_area_id=b.ai_area_id where a.hi_user_id=%s;"
+            house_info = self.db.query(sql,user_id)
+        except Exception as e:
+            logging.error(e)
+            return self.write({"errno": RET.DBERR, "errmsg": "get data erro"})
+        houses = []
+        for i in house_info:
+            house = {
+                "house_id": i["hi_house_id"],
+                "title": i["hi_title"],
+                "price": i["hi_price"],
+                "ctime": i["hi_ctime"].strftime("%Y-%m-%d"),  # 将返回的Datatime类型格式化为字符串
+                "area_name": i["ai_name"],
+                "img_url": CONTENT.QINIU_IMAGE_LINK + '/' +i["hi_index_image_url"] if i["hi_index_image_url"] else ""
+            }
+            houses.append(house)
+        return self.write({"errno":RET.OK, "errmsg":"OK", "houses":houses})
+
 
 
 class HouseinfoHandler(BaseHandler):
@@ -175,13 +196,94 @@ class HouseinfoHandler(BaseHandler):
         except Exception as e:
             logging.error(e)
             return self.write(dict(errno=RET.DBERR, errmsg="save data error"))
-
-
-
-
-
-
         return self.write(dict(errno=RET.OK, errmsg="saved data",house_id=house_id))
+
+    def get(self):
+        """获取房屋信息"""
+        user_id = self.get_current_user()['user']
+        house_id = self.get_argument("house_id")
+        # 校验参数
+        if not house_id:
+            return self.write(dict(errcode=RET.PARAMERR, errmsg="缺少参数"))
+        # 获取房屋信息
+
+        try:
+            sql = "select hi_title,hi_price,hi_address,hi_room_count,hi_acreage,hi_house_unit," \
+                  "hi_capacity,hi_beds,hi_deposit,hi_min_days,hi_max_days,up_name,up_avatar,hi_user_id " \
+                  "from ih_house_info inner join ih_user_profile on hi_user_id=up_user_id " \
+                  "where hi_house_id=%(house_id)s"
+
+            house_info = self.db.get(sql,house_id=house_id)
+        except Exception as e:
+            logging.error(e)
+            return self.write(dict(errno=RET.DBERR, errmsg="save data error"))
+        data = {
+            "hid": house_id,
+            "user_id": house_info["hi_user_id"],
+            "title": house_info["hi_title"],
+            "price": house_info["hi_price"],
+            "address": house_info["hi_address"],
+            "room_count": house_info["hi_room_count"],
+            "acreage": house_info["hi_acreage"],
+            "unit": house_info["hi_house_unit"],
+            "capacity": house_info["hi_capacity"],
+            "beds": house_info["hi_beds"],
+            "deposit": house_info["hi_deposit"],
+            "min_days": house_info["hi_min_days"],
+            "max_days": house_info["hi_max_days"],
+            "user_name": house_info["up_name"],
+            "user_avatar": CONTENT.QINIU_IMAGE_LINK + "/" + house_info["up_avatar"] if house_info.get("up_avatar") else ""
+        }
+
+        # 查询房屋的图片信息
+        sql = "select hi_url from ih_house_image where hi_house_id=%s"
+        try:
+            house_images = self.db.query(sql, house_id)
+        except Exception as e:
+            logging.error(e)
+            house_images = None
+
+        # 如果查询到的图片
+        images = []
+        if house_images:
+            for image in house_images:
+                images.append(CONTENT.QINIU_IMAGE_LINK+ "/" + image["hi_url"])
+        data["images"] = images
+
+        # 查询房屋的基本设施
+        sql = "select hf_facility_id_list from ih_house_facility where hf_house_id=%s"
+        try:
+            house_facility = self.db.get(sql, house_id)
+        except Exception as e:
+            logging.error(e)
+            house_facility = None
+
+        # 如果查询到设施信息
+        data["facilities"] = json.loads(house_facility["hf_facility_id_list"])
+
+        # 查询评论信息
+        sql = "select oi_comment,up_name,oi_utime,up_mobile from ih_order_info inner join ih_user_profile " \
+              "on oi_user_id=up_user_id where oi_house_id=%s and oi_status=4 and oi_comment is not null"
+
+        try:
+            house_comment = self.db.query(sql, house_id)
+        except Exception as e:
+            logging.error(e)
+            house_comment = None
+        comments = []
+
+        if house_comment:
+            for comment in house_comment:
+                comments.append(dict(
+                    user_name=comment["up_name"] if comment["up_name"] != comment["up_mobile"] else "匿名用户",
+                    content=comment["oi_comment"],
+                    ctime=comment["oi_utime"].strftime("%Y-%m-%d %H:%M:%S")
+                ))
+        data["comments"] = comments
+
+
+        return self.write(dict(errno=RET.OK, errmsg="OK",data = data,user_id=user_id))
+
 
 
 class HouseimageHandler(BaseHandler):
@@ -207,7 +309,7 @@ class HouseimageHandler(BaseHandler):
 
         # 将头像key存入数据库
         try:
-            update_avatar = self.db.execute("insert into ih_house_image(hi_house_id,hi_url) values(%(house_id)s, %(key)s);",house_id=house_id, key=key)
+            update_image = self.db.execute("insert into ih_house_image(hi_house_id,hi_url) values(%(house_id)s, %(key)s);",house_id=house_id, key=key)
         except Exception as e:
             logging.error(e)
             return self.write(dict(errno=RET.DBERR, errmsg="房屋图片更新失败"))
