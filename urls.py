@@ -18,6 +18,10 @@ handlers = [
     (r'/api/profile/auth', Profile.ProfileauthHandler),
 
     (r'/api/house/index', House.HouseindexHandler),
+    (r'/api/house/my', House.MyhouseHandler),
+    (r'/api/house/area', House.HouseareaHandler),
+    (r'/api/house/info', House.HouseinfoHandler),
+    (r'/api/house/image', House.HouseimageHandler),
 
     (r'/(.*)', StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),"HTML"),default_filename="index.html")),
 ]
