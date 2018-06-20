@@ -1,7 +1,7 @@
 #coding:utf-8
 import os
 
-from handlers import Port, VerifyCode, Profile, House
+from handlers import Port, VerifyCode, Profile, House, Orders
 from handlers.BaseHandler import StaticFileHandler
 handlers = [
     #(r'/',Port.IndexHandler),
@@ -19,9 +19,14 @@ handlers = [
 
     (r'/api/house/index', House.HouseindexHandler),
     (r'/api/house/my', House.MyhouseHandler),
-    (r'/api/house/area', House.HouseareaHandler),
+    (r'/api/house/area', House.HouseareaHandler),# 创建房屋页面地区调取接口
     (r'/api/house/info', House.HouseinfoHandler),
     (r'/api/house/image', House.HouseimageHandler),
+    (r'/api/house/list', House.HouseListHandler),
+
+    (r'/api/order', Orders.OrderHandler),
+    (r'/api/order/my', Orders.MyOrdersHandler),
+
 
     (r'/(.*)', StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),"HTML"),default_filename="index.html")),
 ]
