@@ -18,7 +18,7 @@ $(document).ready(function(){
     $('.modal').on('show.bs.modal', centerModals);      //当模态框出现的时候
     $(window).on('resize', centerModals);
     $.get("/api/order/my?role=landlord", function(data){
-        if ("0" == data.errcode) {
+        if ("0" == data.errno) {
             $(".orders-list").html(template("orders-list-tmpl", {orders:data.orders}));
             $(".order-accept").on("click", function(){
                 var orderId = $(this).parents("li").attr("order-id");
@@ -36,9 +36,9 @@ $(document).ready(function(){
                     },
                     dataType:"json",
                     success:function (data) {
-                        if ("4101" == data.errcode) {
+                        if ("4101" == data.errno) {
                             location.href = "/login.html";
-                        } else if ("0" == data.errcode) {
+                        } else if ("0" == data.errno) {
                             $(".orders-list>li[order-id="+ orderId +"]>div.order-content>div.order-text>ul li:eq(4)>span").html("已接单");
                             $("ul.orders-list>li[order-id="+ orderId +"]>div.order-title>div.order-operate").hide();
                             $("#accept-modal").modal("hide");
@@ -68,9 +68,9 @@ $(document).ready(function(){
                         "X-XSRFTOKEN":getCookie("_xsrf"),
                     },
                     success:function (data) {
-                        if ("4101" == data.errcode) {
+                        if ("4101" == data.errno) {
                             location.href = "/login.html";
-                        } else if ("0" == data.errcode) {
+                        } else if ("0" == data.errno) {
                             $(".orders-list>li[order-id="+ orderId +"]>div.order-content>div.order-text>ul li:eq(4)>span").html("已拒单");
                             $(".order-operate").hide();
                             $("#reject-modal").modal("hide");
