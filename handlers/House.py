@@ -12,7 +12,7 @@ from libs.login_verify import require_logined
 from .BaseHandler import *
 from libs import qiniu_image_storage
 
-class HouseindexHandler(BaseHandler):
+class HouseIndexHandler(BaseHandler):
     """主页信息查询，页面滑动房屋信息，城区信息"""
     def get(self):
         # 该方法通过自动获取客户端ip调取该客户城区信息
@@ -129,7 +129,7 @@ class HouseindexHandler(BaseHandler):
 
         self.write(dict(errno=RET.OK, errmsg="OK", data=data, houses=houses))
 
-class HouseareaHandler(BaseHandler):
+class HouseAreaHandler(BaseHandler):
     """创建新房源地区信息调取"""
     @require_logined
     def get(self):
@@ -146,7 +146,7 @@ class HouseareaHandler(BaseHandler):
         else:
             return self.write(dict(errno=RET.SESSIONERR, errmsg="NO"))
 
-class MyhouseHandler(BaseHandler):
+class MyHouseHandler(BaseHandler):
     """获取我的房源页面获取本人上传的房屋信息"""
     @require_logined
     def get(self):
@@ -174,7 +174,7 @@ class MyhouseHandler(BaseHandler):
 
 
 
-class HouseinfoHandler(BaseHandler):
+class HouseInfoHandler(BaseHandler):
     """房屋信息详情"""
     @require_logined
     def post(self):
@@ -340,7 +340,7 @@ class HouseinfoHandler(BaseHandler):
 
 
 
-class HouseimageHandler(BaseHandler):
+class HouseImageHandler(BaseHandler):
     """房屋图片上传"""
     @require_logined
     def post(self):

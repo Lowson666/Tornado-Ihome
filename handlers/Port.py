@@ -46,7 +46,7 @@ class RegiserHandler(BaseHandler):
 
         self.write(dict(errno=RET.OK, errmsg="OK"))
 
-class LoginHandler(BaseHandler):
+class LogInHandler(BaseHandler):
     """登录"""
     def post(self):
         mobile = self.json_args.get("mobile")
@@ -80,7 +80,7 @@ class LoginHandler(BaseHandler):
 
 
 
-class CheckLoginHandler(BaseHandler):
+class CheckLogInHandler(BaseHandler):
     def get(self):
         if self.get_current_user():
             self.write({"errno":RET.OK, "errmsg":"true", "data":{"name":self.get_current_user().get("name")}})
@@ -88,7 +88,7 @@ class CheckLoginHandler(BaseHandler):
             self.write(dict(errno= "1", errmsg="false"))
 
 
-class LogoutHandler(BaseHandler):
+class LogOutHandler(BaseHandler):
     def get(self):
         self.seesion = Seesion(self)
         self.seesion.clear()

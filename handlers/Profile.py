@@ -35,7 +35,7 @@ class ProfileHandler(BaseHandler):
 
 
 
-class ProfileavatarHandler(BaseHandler):
+class ProfileAvatarHandler(BaseHandler):
     """用户头像上传处理"""
 
     @require_logined
@@ -66,7 +66,7 @@ class ProfileavatarHandler(BaseHandler):
 
 
 
-class ProfilenameHandler(BaseHandler):
+class ProfileNameHandler(BaseHandler):
     """用户名字修改上传处理"""
 
     @require_logined
@@ -82,7 +82,7 @@ class ProfilenameHandler(BaseHandler):
 
 
 
-class ProfileauthHandler(BaseHandler):
+class ProfileAuthHandler(BaseHandler):
     """用户身份证信息上传处理"""
 
     @require_logined
